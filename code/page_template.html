@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Does anyone play your town? | Concert geography from MusicBrainz</title>
+<meta name="description" content="Which UK towns does the crowd-sourced record of live music remember? Every concert documented in MusicBrainz, 1960 to 2025, by local authority, against what its size predicts.">
+<meta property="og:title" content="Does anyone play your town?">
+<meta property="og:description" content="{{la.big_no_tour|int}} of {{la.big_n|int}} big UK councils have no documented tour date in MusicBrainz. Arena towns hold {{la.arena_pop_pc|f0}}% of people and {{la.arena_tour_pc|f0}}% of recorded tour dates.">
+<meta property="og:image" content="https://maps.tristanhotham.com/band-towns/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/band-towns/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=MedievalSharp&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+{{CSS}}
+.key .sw{border-radius:50%}
+.spark{display:flex;align-items:flex-end;gap:3px;height:46px;margin:6px 0 2px}
+.spark span{flex:1;background:#B4442E;min-height:1px;position:relative}
+.spark span.x{background:#D8D1C3}
+.sparkl{display:flex;gap:3px;font-size:10px;color:#7A6A52}.sparkl span{flex:1;text-align:center}
+.tl .yr{min-width:120px}
+</style></head>
+<body>
+<div class="topbar">
+  <a class="tb-name" href="#mapWrap">Does anyone play your town?</a>
+  <span class="tb-k">Data study · 2026</span>
+  <nav class="tb-links"><a href="#essay">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button><a href="https://doi.org/10.5281/zenodo.24113541">Paper</a><a class="x" href="{{REPO}}">Data and code</a></nav>
+</div>
+<div class="mapband">
+  <div class="pane" id="mapWrap" data-fullscreen-map role="application" aria-label="Map of UK local authorities sized by concerts documented in MusicBrainz and coloured by how many more or fewer than their size predicts">
+    <div id="map"></div>
+    <div class="nojs" id="nojs">Loading the map. It needs JavaScript and WebGL.</div>
+    <div class="cartouche" id="cartouche">
+      <button class="ct-toggle" id="ctToggle" aria-expanded="true" title="Show the title">Does anyone play your town? <span aria-hidden="true">▾</span></button>
+      <button class="ct-fold" id="ctFold" title="Fold the title" aria-label="Fold the title">▴</button>
+      <div class="ct-body">
+        <div class="kicker"><b>Data study</b><span>2026</span></div>
+        <h1>Does anyone play <span class="a">your town?</span></h1>
+        <p class="dek">Every UK local authority (the outlined areas), sized by the concerts documented in MusicBrainz, 1960 to 2025, and coloured by whether that is more or fewer than its size predicts. A volunteer record, not a census. Slide through the decades; tap a circle or search.</p>
+        <div class="byline">{{BYLINE}}</div>
+      </div>
+    </div>
+    <div class="ov ov-top">
+      <div class="srch"><input type="search" id="q" placeholder="Find a council area or venue" aria-label="Find a council area or venue" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+      <div class="chips"><button class="chip" data-m="all" aria-pressed="true">All documented gigs</button><button class="chip" data-m="tour" aria-pressed="false">Tour dates</button><button class="chip lyr" id="lyrBtn" aria-expanded="false" aria-controls="lp">Layers</button></div>
+    </div>
+    <div class="lp" id="lp" role="dialog" aria-label="Map layers">
+      <h4>Layers</h4>
+      <label><input type="checkbox" id="lyA" checked> Council areas: documented concerts</label>
+      <label><input type="checkbox" id="lyV"> Documented venues ({{coverage.venues_mapped|int}})</label>
+      <label><input type="checkbox" id="lyR" checked> Indoor arenas of 10,000+ seats</label>
+      <label><input type="checkbox" id="lyO" checked> Council area outlines</label>
+      <label><input type="checkbox" id="lyL" checked> Base map place names</label>
+      <h5>Coverage</h5>
+      <p style="margin:4px 0 0;font-size:12px;color:#6E604E">The UK's 361 local authorities (2023). Circles sit at each area's centre. Counts are concerts someone has entered in MusicBrainz, a small fraction of all gigs.</p>
+    </div>
+    <div class="keys" id="keys"><div class="key">
+      <b>Against what size predicts</b>
+      <div class="row"><span class="sw" style="background:#B4442E"></span>4x or more documented</div>
+      <div class="row"><span class="sw" style="background:#E3A08A"></span>2x to 4x more</div>
+      <div class="row"><span class="sw" style="background:#D8D1C3"></span>about as expected</div>
+      <div class="row"><span class="sw" style="background:#6F9CC4"></span>2x to 4x fewer</div>
+      <div class="row"><span class="sw" style="background:#1F4F7A"></span>4x or more fewer</div>
+      <div class="row" style="margin-top:4px"><span class="sw" style="background:#fff;border:2px solid #1F4F7A"></span>none documented</div>
+      <div class="row"><span class="sw" style="background:#2B2119;border:2px solid #fff;outline:1px solid #2B2119"></span>arena of 10,000+ seats</div>
+      <div class="row"><span class="sw" style="background:#7A3E8E"></span>documented venue</div>
+      <div class="nt" style="margin-top:4px;color:#6E604E">Circle size: documented concerts</div>
+    </div></div>
+    <div class="tl" id="tl" role="group" aria-label="Decade">
+      <button id="play" aria-label="Play through the decades">▶</button>
+      <span class="yr" id="decTxt">1960 to 2025</span>
+      <input type="range" id="dec" min="0" max="7" step="1" value="7" aria-label="Decade: 1960s to 2020s, or all years">
+      <span class="pcs" id="decPc"></span>
+    </div>
+  </div>
+</div>
+<div class="wrap" id="essay">
+%%ESSAY%%
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) Does anyone play your town? The geography of the documented concert record in the United Kingdom, from MusicBrainz. Zenodo. <a href="https://doi.org/10.5281/zenodo.24113541">10.5281/zenodo.24113541</a></p>
+<p>Code: <a href="{{REPO}}">github.com/Tristan-Hotham/band-towns</a> (MIT). Text and figures CC BY 4.0. MusicBrainz data CC0 (MetaBrainz Foundation).</p>
+<p>{{AI}}</p>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/page.js?v={{VERSION}}"></script>
+{{FULLSCREEN}}
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>

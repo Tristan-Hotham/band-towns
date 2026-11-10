@@ -1,0 +1,17 @@
+{
+  "title": "Does anyone play your town?",
+  "slug": "band-towns",
+  "excerpt": "Volunteers have documented 7,615 UK concerts in MusicBrainz. I mapped every one by council area. 70 of 167 big council areas have no documented tour date, and arena towns hold 53% of them.",
+  "seo_description": "Every UK concert documented in MusicBrainz, 1960 to 2025, mapped by council area: arena towns hold 10% of people but 53% of tour dates.",
+  "tags": [
+    "maps",
+    "data visualisation",
+    "music",
+    "live music",
+    "concerts",
+    "MusicBrainz",
+    "open data",
+    "UK"
+  ],
+  "header_alt": "Title card on cream paper reading 'Does anyone play your town?' beside a map of UK council areas, most shaded blue, with red patches and black arena triangles."
+}

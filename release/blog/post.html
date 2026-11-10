@@ -1,0 +1,140 @@
+<!-- wp:paragraph -->
+<p><em>Volunteers have typed 7,615 UK concerts from 1960 to 2025 into MusicBrainz, the open music encyclopaedia. I put every one on the map to see which towns this record remembers. 70 of the 167 council areas with 150,000 or more people have no documented tour date at all.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/band-towns/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24113541">Read the paper</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p>Every gig leaves a trace somewhere: a ticket stub, a poster, a review, a blurry photo. Some of those traces end up in MusicBrainz, a free database of music that anyone can edit. It records events too: a date, a venue and the acts who played. It is the kind of source that makes a data person's ears prick up. Could it tell us which towns bands actually play, and which they drive straight past?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Short answer: not quite. What it can tell us is which towns the record remembers. That turns out to be a story in itself.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A thin, lumpy record</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I streamed the whole MusicBrainz event dump and placed every event in the UK into its local council area. There are 11,329 UK events in all, and 7,615 concerts dated 1960 to 2025. Since 1980 the record holds a median of 120 UK concerts a year. For scale, the 2017 UK Live Music Census found at least 241 spaces where live music is played in Glasgow alone. Across 66 years, MusicBrainz knows of concerts at 57 Glasgow venues.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_coverage.png|Bar chart of UK concerts recorded in MusicBrainz each year from 1960 to 2025, mostly under 200 a year with tall spikes in 1998, 2002, 2005 and 2024|The record by year. Spikes are years when someone entered whole tours date by date.}}
+
+<!-- wp:paragraph -->
+<p>It is also lumpy. The ten most documented acts account for 12% of all documented concerts, led by Barry Manilow with 234. The ten most documented venues hold 26%. Number two is the West Runton Pavilion, a venue in a village on the north Norfolk coast, with 335 concerts, every one from 1975 to 1983. Somebody, bless them, entered a long run of its gigs. That one archive makes North Norfolk the fourth most documented council area in the UK.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So this is a map of memory, not of music. With that firmly in mind, here is what the memory looks like.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Big places, bigger memories</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Bigger places have more documented concerts, and more than their size alone would suggest. Double the population of a council area and you get about 213% more documented gigs, not 100%. Researchers who study cities find this pattern for all sorts of things that feed on crowds and networks, from wages to patents, usually with smaller exponents. Here it is steeper (1.64), which is what you would expect if the volunteers who document gigs also favour the big shows in the big places.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_scaling.png|Scatter chart of documented concerts against population for 361 UK council areas on log scales, rising steeply, with arena cities in red near the top|Each dot is a council area. Red dots have an indoor arena of 10,000 or more seats.}}
+
+<!-- wp:paragraph -->
+<p>And 161 of the 361 council areas have no documented concert at all. Between them they are home to 21.8 million people.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The arena circuit</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The clearest pattern is the arena circuit. Fourteen council areas have an indoor arena with 10,000 or more seats: Manchester, Glasgow, Birmingham and Solihull, Leeds, Sheffield, Newcastle, Liverpool, Nottingham, Coventry, Belfast, Aberdeen, and in London, Greenwich and Brent. Together they hold 10% of the UK's people. They hold 38% of documented concerts and 53% of documented tour dates, which I define as an act's year with five or more UK dates.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_arenas.png|Bar chart showing that the 14 arena council areas hold 10% of UK population but 38% of documented concerts and 53% of tour dates|Shares held by the council areas with a 10,000+ seat arena.}}
+
+<!-- wp:paragraph -->
+<p>Allowing for size and nation, a council area with an arena has 3.8 times the documented concerts of one without. For tour dates the arena premium is 7.0 times bigger again than for other gigs. When I gave "arena" status to random council areas of similar size, 500 times over, the real arenas beat the fake ones in all but 0.4% of tries. The premium does get less certain if I cap each act at three concerts per area or drop the ten most documented acts, so a handful of heavily documented tours matter a lot.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:pullquote -->
+<figure class="wp-block-pullquote"><blockquote><p>70 of the 167 UK council areas with 150,000 or more people have no documented tour date at all.</p></blockquote></figure>
+<!-- /wp:pullquote -->
+
+<!-- wp:paragraph -->
+<p>The flip side is the towns the circuit skips, or at least the towns where nobody has written down the circuit stopping. Wiltshire has more than half a million people and 1 documented gig. Barnet, Fife, Ealing, Sandwell and Wigan have none. Fans of those places will know perfectly well that bands play there. That is the point: the record does not.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_skipped.png|Bar chart of the twelve most populous council areas with no documented tour date, led by Wiltshire, Cheshire East, Barnet, Dorset and Fife|The biggest council areas with no documented tour date, 1960 to 2025.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The shadow that wasn't</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Before counting anything by area I wrote down what I expected. One expectation was a shadow: towns close to an arena city should see fewer big gigs than towns of the same size far away, because their audiences can just get the train. In the planned model the shadow is not there. It only shows up if I set London aside, where boroughs close to two arenas are also full of famous theatres and halls. That is interesting, but it was not the plan, so I treat it as a hint rather than a finding.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_map.png|Map of UK council areas coloured from blue (fewer documented concerts than expected) to red (more), mostly blue, with red in central London, Cambridge, north Norfolk and Edinburgh|Documented concerts against what each area's size, nation and arenas predict.}}
+
+<!-- wp:paragraph -->
+<p>On the map, red areas have more documented concerts than their size predicts and blue areas fewer. The reddest are the venue archives and the capital: North Norfolk (335 documented against about 6 expected), Westminster with the Royal Albert Hall, Cambridge with its Corn Exchange. The bluest are big places with nothing documented at all, like Ealing and Barnet, expected to have around 44 and 40. Slide through the decades on the interactive map and you can watch the record move from a 1970s Norfolk venue and London theatres to the arena cities.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How I did this</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I streamed the MusicBrainz event and place dumps straight from their compressed files and placed each UK event by its venue's coordinates inside a council boundary. About 8% of events had a venue without coordinates; I placed those at the largest UK settlement with the same name as the venue's area. The outcome is every event typed Concert, not cancelled, from 1960 to 2025. Populations come from the 2021 census (2022 in Scotland). The arena list is Wikipedia's list of UK indoor arenas, keeping those with 10,000 or more seats.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The analysis was pre-specified in a written plan before I made any council-level count: Poisson models of documented concerts on population, nation, arenas and distance to the nearest arena, a stacked model comparing tour dates with other gigs, and a long list of checks, including the placebo arenas. Everything is in the paper and the code.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What this can't tell you: how many concerts actually happen in your town. MusicBrainz holds a small and uneven slice of the UK's live music, shaped by which acts and venues its volunteers care about. A blank town is a town nobody has written up, not a town without music. If that annoys you, the good news is that anyone can add a gig.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/band-towns/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24113541">Read the paper</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Tristan-Hotham/band-towns">Data and code</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Notes and sources</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Concerts and venues: MusicBrainz JSON data dumps, 2026, MetaBrainz Foundation (CC0).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Population: Census 2021 (ONS, NISRA) and Scotland's Census 2022 (NRS). Boundaries: local authority districts 2023 (ONS, OSNI). Open Government Licence v3.0.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Arenas: Wikipedia, List of indoor arenas in the United Kingdom (CC BY-SA 4.0). Venue counts for Glasgow: E. Webster, M. Brennan, A. Behr, M. Cloonan and J. Ansell, Valuing Live Music: The UK Live Music Census 2017 Report (2018).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Further reading: S. Frith, M. Brennan, M. Cloonan and E. Webster, The History of Live Music in Britain; L. Bettencourt and colleagues, Growth, innovation, scaling, and the pace of life in cities, PNAS (2007); M. Graham and colleagues, Uneven geographies of user-generated information, Annals of the AAG (2014).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

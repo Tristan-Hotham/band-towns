@@ -1,0 +1,7 @@
+[
+ {"w":1280,"h":860,"out":"qa/desktop_map.png"},
+ {"w":1280,"h":860,"out":"qa/desktop_popup.png","eval":"(()=>{const m=window.__map;const p=m.project([0.1384,52.1977]);m.fire('click',{point:p,lngLat:{lng:0.1384,lat:52.1977},originalEvent:{}});document.getElementById('lyrBtn').click();})()"},
+ {"w":1280,"h":860,"out":"qa/desktop_1970s.png","eval":"(()=>{const d=document.getElementById('dec');d.value=1;d.dispatchEvent(new Event('input'));document.getElementById('lyV').click();window.__map.flyTo({center:[0.5,52.5],zoom:6.5,duration:0})})()"},
+ {"w":390,"h":844,"dpr":2,"out":"qa/phone_map.png"},
+ {"w":390,"h":844,"dpr":1,"out":"qa/phone_full.png","full":true}
+]
